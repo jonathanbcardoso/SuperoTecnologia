@@ -1,0 +1,57 @@
+﻿@model SuperoTarefas.Models.TarefasUrgencia
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<p></p>
+<div style=" font-size: 20px; color: dodgerblue">
+    Excluir Urgência
+</div>
+<p></p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Id, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly", @class = "form-control" } })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.NivelUrgencia, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NivelUrgencia, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly", @class = "form-control" } })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Urgencia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Urgencia, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly", @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-danger btn-lg" />
+            </div>
+        </div>
+    </div>
+    <div class="alert-danger danger;">
+        @ViewBag.DeleteError
+    </div>
+    <p></p>
+
+}
+
+<div>
+    @*@Html.ActionLink("Voltar", "Index")*@
+    <input type="button" class="btn btn-primary btn-sm" value="Voltar" onclick="location.href='@Url.Action("Index", "TarefasUrgencia")'" />
+</div>

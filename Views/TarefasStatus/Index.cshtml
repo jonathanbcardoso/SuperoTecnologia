@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SuperoTarefas.Models.TarefasStatus>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p></p>
+<div style="font-size: 20px; color: dodgerblue">
+    Lista de Status
+</div>
+<p></p>
+
+<table class="table">
+    <tr style="font-family: 'Times New Roman'">
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>            
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (SuperoTarefas.Models.TarefasStatus item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.Id)
+        </td>
+        <td>            
+            @Html.DisplayFor(model => item.Status)
+        </td>
+        <td>
+            <div style="font-size: 14px; font-family: 'Times New Roman'">
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @*@Html.ActionLink("Detalhar", "Details", new { id = item.Id })*@
+                @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+            </div>
+        </td>
+    </tr>
+}
+
+
+</table>
+
+<p>
+    @*@Html.ActionLink("Criar Status", "Create","TarefasStatus")*@
+    <input type="button" class="btn btn-primary" value="Cadastrar Status" onclick="location.href='@Url.Action("Create", "TarefasStatus")'" />
+</p>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SuperoTarefas.Models.TarefasUrgencia>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p></p>
+<div style="font-size: 20px; color: dodgerblue">
+    Lista de Urgência
+</div>
+<p></p>
+
+<table class="table">
+    <tr style="font-family: 'Times New Roman'">
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.NivelUrgencia)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Urgencia)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (SuperoTarefas.Models.TarefasUrgencia item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Id)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(model => item.NivelUrgencia)
+                </td>*@
+            <td>
+                @Html.DisplayFor(model => item.Urgencia)
+            </td>
+            <td>
+                <div style="font-size: 14px; font-family: 'Times New Roman'">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @*@Html.ActionLink("Detalhar", "Details", new { id = item.Id }) |*@
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @*@Html.ActionLink("Criar Urgencia", "Create","TarefasUrgencia")*@
+    <input type="button" class="btn btn-primary" value="Cadastrar Urgência" onclick="location.href='@Url.Action("Create", "TarefasUrgencia")'" />
+</p>

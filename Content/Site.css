@@ -1,0 +1,70 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background: white;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse {
+    background: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {    
+    color: black;
+    font-size: 15px;    
+    font-family: 'Courier New';
+}
+
+   /*---Botão Tarefas---*/
+.navbar-inverse .navbar-nav > li > a:hover:after {    
+    color: black;
+    font-size: 15px;    
+    font-family: 'Courier New';
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {    
+    background-color:  antiquewhite ;
+    color: orangered;
+    font-size: 17px;
+    margin-left: -4px;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: orangered;
+    background-color: antiquewhite;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: black;
+    background-color: white;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: black;
+    font-family: 'Courier New' ;
+    background-color: white;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+    color: orangered;
+    background-color: antiquewhite;        
+    font-size: 17px;
+    margin-left: -4px;
+}
+
+.h4txt {
+    font-size: 18px;
+    font-family: "Courier New";
+}

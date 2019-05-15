@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="SuperoTarefas" namespace="SuperoTarefas.Models">
+  <class name="TarefasUrgencia" table="TarefasUrgencia" dynamic-update="true" >
+    <cache usage="read-write"/>
+
+    <id name="Id" column="ID_URGENCIA" type="integer">
+      <generator class="increment"></generator>
+    </id>
+    
+    <!--<property name="NivelUrgencia" type="integer">
+      <column name="NIVEL_URGENCIA" not-null="true"/>
+    </property>-->
+
+    <property name="Urgencia" type="String">
+      <column name="DES_URGENCIA" length="40" sql-type="varchar" not-null="true"/> 
+    </property>    
+    
+  </class>
+</hibernate-mapping>

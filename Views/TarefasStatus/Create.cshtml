@@ -1,0 +1,53 @@
+﻿@model SuperoTarefas.Models.TarefasStatus
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<p></p>
+<div style="font-size: 20px; color: dodgerblue">
+    Cadastro de Status
+</div>
+<p></p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Status, new { @maxlength = "30", @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-success btn-lg" />
+            </div>
+        </div>
+        <div class="alert-danger danger">
+            @ViewBag.SaveUnsucess
+        </div>
+        <p>
+        </p>
+    </div>
+}
+
+<div>
+    @*@Html.ActionLink("Voltar", "Index")*@
+    <input type="button" class="btn btn-primary btn-sm" value="Voltar" onclick="location.href='@Url.Action("Index", "TarefasStatus")'" />
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

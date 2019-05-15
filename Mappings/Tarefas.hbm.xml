@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="SuperoTarefas" namespace="SuperoTarefas.Models">
+  <class name="Tarefas" table="Tarefas" dynamic-update="true" >
+    <cache usage="read-write"/>
+
+    <id name="Id" column="ID_TAREFA" type="integer">
+      <generator class="increment"></generator>
+    </id>    
+    <property name="TituloTarefa" type="String">
+      <column name="TITULO_TAREFA" length="150" sql-type="varchar" not-null="true"/> 
+    </property>
+    <property name="DesTarefa" type="String">
+      <column name="DES_TAREFA" length="400" sql-type="varchar" not-null="true"/>
+    </property>
+    <property name="DataCriacao" type="datetime">
+      <column name="DATA_CRIACAO" />
+    </property>
+    <property name="DataEdicao" type="datetime">
+      <column name="DATA_EDICAO" />
+    </property>
+    <property name="DataExclusao" type="datetime">
+      <column name="DATA_EXCLUSAO" />
+    </property>
+    <property name="TarefasStatusId" type="integer">
+      <column name="TAREFA_STATUS_ID" not-null="true"/>
+    </property>
+    <property name="TarefasUrgenciaId" type="integer">
+      <column name="TAREFA_URGENCIA_ID" not-null="true"/>
+    </property>   
+
+  </class>
+</hibernate-mapping>
